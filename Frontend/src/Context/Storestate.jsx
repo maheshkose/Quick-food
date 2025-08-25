@@ -7,8 +7,10 @@ import { toast } from "react-toastify";
 import axios from "axios";
 // Assuming food_list is an array of food items imported from assets
 const Storestate = (props) => {
-  const url = "http://localhost:5000/api";
-  const imageUrl = "http://localhost:5000/images";
+  // const url = "http://localhost:5000/api";
+  //const imageUrl = "http://localhost:5000/images";
+  const url = "https://quick-food-hvfv.onrender.com/api";
+  const imageUrl = "https://quick-food-hvfv.onrender.com/images";
   const [showLogin, setShowLogin] = useState(false);
   const [foodList, setFoodList] = useState([]);
   const [cartItems, setCartItems] = useState({});

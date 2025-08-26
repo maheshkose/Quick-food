@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
   res.send('Api working');});
   
   //api end points
- app.use('/images', express.static(path.join(__dirname, 'Backend/uploads')));
+ app.use('/images', express.static(path.join(__dirname, 'Backend/Uploads')));
 
 //food router
 app.use('/api/food', foodRouter);

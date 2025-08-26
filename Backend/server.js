@@ -5,6 +5,9 @@ dotenv.config();
 import cors from 'cors';
 import fs from 'fs';
 import cookieParser from 'cookie-parser';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 
 
 import { connectDb } from './config/db.js';
@@ -20,6 +23,8 @@ const app = express();
 //port configuration
 const PORT = process.env.PORT || 5000;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 //middleware
 app.use(express.json());
 
@@ -39,7 +44,8 @@ app.get('/', (req, res) => {
   res.send('Api working');});
   
   //api end points
-  app.use('/images',express.static("uploads"));
+ app.use('/images', express.static(path.join(__dirname, 'Backend/uploads')));
+
 //food router
 app.use('/api/food', foodRouter);
 //user router

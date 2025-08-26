@@ -49,6 +49,11 @@ a{
 @media (max-width: 480px) {
   .app{
     width: 95%;
+  }.spinner {
+    width: 100px;
+    height: 100px;
+    top: 40%;
+    left: 35%;
   }
   
 }

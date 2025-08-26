@@ -2,9 +2,12 @@ import React, { useEffect } from "react";
 import App_context from "./App_context";
 import axios from "axios";
 import { useState } from "react";
-import { imageUrl } from "../assets/assets.js";
+
 const App_State = (props) => {
-  const url = "http://localhost:5000/api";
+  // const url = "http://localhost:5000/api";
+  //  const imageUrl = 'http://localhost:5000';
+   const url = "https://quick-food-hvfv.onrender.com/api";
+  const imageUrl = 'https://quick-food-hvfv.onrender.com/images';
   const [isLoggedIn, setisLoggedIn] = useState(false);
   const [adminDetails, setAdminDetails] = useState({});
 

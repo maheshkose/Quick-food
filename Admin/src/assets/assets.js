@@ -15,6 +15,6 @@ export const assets ={
     cross_icon
 }
 
-export const imageUrl = 'http://localhost:5000'
+
 
 export const api = 'http://localhost:5000/api'

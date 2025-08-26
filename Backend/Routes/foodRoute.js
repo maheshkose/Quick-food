@@ -16,7 +16,7 @@ const upload = multer({storage:storage})
 
 foodRouter.post('/add', isAdminAuthenticate,upload.single("image"), addFood);
 //get all food items list
-foodRouter.get('/list',isAdminAuthenticate, getFoodList)
+foodRouter.get('/list', getFoodList)
 foodRouter.delete('/remove/:id',isAdminAuthenticate, removeFood);
 //add many
 foodRouter.post('/addmany',addMany)

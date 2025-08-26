@@ -29,7 +29,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.json());
 
 app.use(cors({
-  origin: [process.env.FRONTEND_URL,process.env.ADMIN_URL], // or your frontend's actual URL
+  origin: [process.env.FRONTEND_URL,process.env.ADMIN_URL,"http://localhost:5173","http://localhost:5174"], // or your frontend's actual URL
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
   res.send('Api working');});
   
   //api end points
- app.use('/images', express.static(path.join(__dirname, 'Backend/Uploads')));
+ app.use('/images', express.static(path.join(__dirname, 'Uploads')));
 
 //food router
 app.use('/api/food', foodRouter);

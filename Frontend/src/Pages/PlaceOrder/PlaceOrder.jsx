@@ -31,6 +31,8 @@ const PlaceOrder = () => {
   
   const placeOrderHandler = async (e) => {
     e.preventDefault();
+    const spinner = document.querySelector(".spinner");
+    spinner.style.display = "block";
     let orderItems = [];
     foodList.map((item)=>{
       if (cartItems[item._id]>0) {
@@ -48,6 +50,7 @@ const PlaceOrder = () => {
     }
 
     let res = await placeOrder(orderData);
+    spinner.style.display = "none";
     if (res?.data?.success) {
       // const {session_url} = res.data;
       // window.location.replace(session_url);
@@ -182,6 +185,7 @@ const PlaceOrder = () => {
           </div>
           <button /*onClick={() => navigate("/paymentoptions")}*/>
             Proceed to Payment
+            <div className="spinner"></div>
           </button>
         </div>
       </div>

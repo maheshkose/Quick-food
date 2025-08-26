@@ -100,8 +100,10 @@ export const logoutClient = catchAsyncError(async (req,res,next) => {
     res.cookie("ClientToken",null,{
         expires: new Date(Date.now()),
         httpOnly: true,
-        secure: false, // for local development
-        sameSite: "Lax", // or "None" if cross-site
+        secure:true,
+        sameSite:"None", // or "None" if cross-site
+        // secure: false, // for local development
+        // sameSite: "Lax", // or "None" if cross-site
     });
     res.status(200).json({
         success:true,
@@ -112,8 +114,10 @@ export const logoutAdmin = catchAsyncError(async (req,res,next) => {
     res.cookie("AdminToken",null,{
         expires: new Date(Date.now()),
         httpOnly: true,
-        secure: false, // for local development
-        sameSite: "Lax", // or "None" if cross-site
+        secure:true,
+        sameSite:"None",
+        // secure: false, // for local development
+        // sameSite: "Lax", // or "None" if cross-site
     });
     res.status(200).json({
         success:true,

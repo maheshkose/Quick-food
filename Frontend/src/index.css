@@ -28,3 +28,27 @@ a{
     opacity: 1;
   }
 }
+.spinner {
+    position: fixed;
+    z-index: 200;
+    top: 25%;
+    left: 45%;
+    display: none;
+    width: 200px;
+    height: 200px;
+    border: 3px solid #f3f3f3; /* Light grey */
+    border-top: 3px solid tomato; /* Tomato color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+  .app{
+    width: 95%;
+  }
+  
+}

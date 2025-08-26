@@ -102,6 +102,12 @@
     font-size: 1rem;
     font-weight: 500;
 }
+.status{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
  @media (max-width:768px) {
      
     .my-orders-order{
@@ -115,6 +121,10 @@
     .order-details .order-item img{
         width: 60px;
         height: 60px;
+    }
+    .order-price-status{
+        flex-direction: column;
+        gap: 5px;
     }
     
 } 

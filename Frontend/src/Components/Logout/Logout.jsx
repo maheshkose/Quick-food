@@ -6,8 +6,11 @@ import { toast } from 'react-toastify';
 const Logout = ({ setShowLogin }) => {
     const {  setIsLoggedIn,logout,setUser } = useContext(StoreContext);
     const handleLogout = async () => {
+      const spinner = document.querySelector(".spinner");
+      spinner.style.display = "block";
     try {
         const response = await logout();
+        spinner.style.display = "none";
         if (response?.data?.success) {
           setIsLoggedIn(false);
           setShowLogin(false);
@@ -26,7 +29,9 @@ const Logout = ({ setShowLogin }) => {
         <h2 className='title'>Are you sure you want to logout?</h2>
         <button onClick={() => {
          handleLogout();
-        }}>Yes</button>
+        }}>Yes
+         <div className="spinner"> </div>
+        </button>
         <button onClick={() => setShowLogin(false)}>No</button>
       </div>
   )

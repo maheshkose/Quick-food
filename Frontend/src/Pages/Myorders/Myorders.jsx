@@ -18,7 +18,10 @@ const Myorders = () => {
   };
 
   const handleCancleOrder = async(orderId)=>{
+    const spinner = document.querySelector(".spinner");
+    spinner.style.display = "block";
     const res = await cancelOrder(orderId);
+    spinner.style.display = "none";
     if (res?.data?.success) {
       toast.success(res?.data?.message || "Order cancelled successfully");
       getUserOrdersHandler();
@@ -55,13 +58,15 @@ const Myorders = () => {
                 <div className="order-price-and">
                   <div className="order-price-status">
                     <p>Total : Rs.{order.amount}</p>
-                    <p>
+                    <p className="status">
                       <span>&#x25cf;</span> <b>{order.status}</b>
                     </p>
                   </div>
                   <div className="order-buttons">
                     <button>track Order</button>
-                    <button onClick={()=>{handleCancleOrder(order._id)}}>Cancel order</button>
+                    <button onClick={()=>{handleCancleOrder(order._id)}}>Cancel order
+                      <div className="spinner"></div>
+                    </button>
                   </div>
                   <div className="order-date">
                     <p>

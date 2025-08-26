@@ -32,3 +32,20 @@
         display: none;
     }
 }
+@media (max-width:480px){
+    .sidebar{
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        min-height: auto;
+        background-color: #aaaaaaaa;
+    }
+    .sidebar-options{
+        flex-direction: row;
+        padding: 10px 5%;
+        justify-content: space-around;
+        gap: 0px;
+    }
+    
+}

@@ -14,11 +14,11 @@ export const generateToken = (user, message, statusCode, res) => {
         Date.now() + Number(process.env.COOKIE_EXPRIRE) * 24 * 60 * 60 * 1000
       ),
       httpOnly: true,
-      // secure: true,
-      // sameSite: "None",
+      secure: true,
+      sameSite: "None",
       // httpOnly: false,
-      secure: false, // for local development
-      sameSite: "Lax", // or "None" if cross-site
+      // secure: false, // for local development
+      // sameSite: "Lax", // or "None" if cross-site
     })
     .json({
       success: true,
